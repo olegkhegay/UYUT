@@ -1,0 +1,13 @@
+.container{
+    max-width: 446px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+*{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+a{
+    text-decoration: none;
+}

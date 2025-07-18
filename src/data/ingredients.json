@@ -1,0 +1,142 @@
+{
+  "categories": [
+    {
+      "id": "base",
+      "name": "Основа",
+      "maxSelection": 1,
+      "required": true,
+      "items": [
+        {
+          "id": "bread",
+          "name": "Хлеб",
+          "price": 1500,
+          "weight": 80,
+          "image": "/images/custom/Bread_mock.png"
+        },
+        {
+          "id": "lavash",
+          "name": "Лаваш",
+          "price": 1200,
+          "weight": 70,
+          "image": "/images/custom/Lavash_mock.png"
+        },
+        {
+          "id": "hotdog",
+          "name": "Булочка для хот-дога",
+          "price": 1350,
+          "weight": 75,
+          "image": "/images/custom/HotDog_mock.png"
+        }
+      ]
+    },
+    {
+      "id": "meat",
+      "name": "Мясо",
+      "maxSelection": 1,
+      "required": false,
+      "items": [
+        {
+          "id": "chicken",
+          "name": "Курица",
+          "price": 4500,
+          "weight": 120,
+          "image": "/images/custom/Chicken_mock.png"
+        },
+        {
+          "id": "beef",
+          "name": "Говядина",
+          "price": 6000,
+          "weight": 120,
+          "image": "/images/custom/Cow_mock.png"
+        },
+        {
+          "id": "lamb",
+          "name": "Баранина",
+          "price": 5400,
+          "weight": 120,
+          "image": "/images/custom/Sheep_mock.png"
+        }
+      ]
+    },
+    {
+      "id": "vegetables",
+      "name": "Овощи",
+      "maxSelection": 999,
+      "required": false,
+      "items": [
+        {
+          "id": "tomatoes",
+          "name": "Помидоры",
+          "price": 900,
+          "weight": 50,
+          "image": "/images/custom/Tomatoes_mock.png"
+        },
+        {
+          "id": "pickles",
+          "name": "Соленые огурцы",
+          "price": 750,
+          "weight": 40,
+          "image": "/images/custom/Pickels_mock.png"
+        },
+        {
+          "id": "carrot",
+          "name": "Морковь",
+          "price": 600,
+          "weight": 35,
+          "image": "/images/custom/MarkovchaTopping_mock.png"
+        }
+      ]
+    },
+    {
+      "id": "sauces",
+      "name": "Соусы",
+      "maxSelection": 999,
+      "required": false,
+      "items": [
+        {
+          "id": "ketchup",
+          "name": "Кетчуп",
+          "price": 450,
+          "weight": 15,
+          "image": "/images/custom/Ketchup_mock.png"
+        },
+        {
+          "id": "mayonnaise",
+          "name": "Майонез",
+          "price": 450,
+          "weight": 15,
+          "image": "/images/custom/Mayonese_mock.png"
+        },
+        {
+          "id": "garlic",
+          "name": "Чесночный соус",
+          "price": 600,
+          "weight": 20,
+          "image": "/images/custom/GarlickSous_mock.png"
+        },
+        {
+          "id": "teriyaki",
+          "name": "Терияки",
+          "price": 750,
+          "weight": 20,
+          "image": "/images/custom/Teriyaki_mock.png"
+        }
+      ]
+    },
+    {
+      "id": "sides",
+      "name": "Гарнир",
+      "maxSelection": 999,
+      "required": false,
+      "items": [
+        {
+          "id": "fries",
+          "name": "Картофель фри",
+          "price": 2400,
+          "weight": 150,
+          "image": "/images/custom/Fri_mock.png"
+        }
+      ]
+    }
+  ]
+} 

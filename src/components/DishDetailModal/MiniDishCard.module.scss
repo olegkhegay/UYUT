@@ -1,0 +1,322 @@
+.miniCard {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: all 0.2s ease;
+  border: 2px solid #9A3412;
+  animation: slideInUp 0.3s ease-out;
+  height: 160px;
+  cursor: pointer;
+  width: 100%;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  }
+
+  // Стили для элементов в сете
+  &__inSet {
+    cursor: default;
+    border-color: #e5e7eb;
+    background-color: #f9fafb;
+
+    &:hover {
+      transform: none;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+  }
+
+  @media (max-width: 480px) {
+    height: 150px;
+  }
+
+  @media (max-width: 360px) {
+    height: 140px;
+  }
+
+  &__image {
+    width: 100%;
+    height: 100px;
+    overflow: hidden;
+    position: relative;
+
+    @media (max-width: 480px) {
+      height: 90px;
+    }
+
+    @media (max-width: 360px) {
+      height: 80px;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+  }
+
+  &__content {
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex: 1;
+    justify-content: space-between;
+
+    @media (max-width: 480px) {
+      padding: 6px;
+      gap: 4px;
+    }
+  }
+
+  &__name {
+    font-size: 12px;
+    font-weight: 600;
+    color: #374151;
+    margin: 0;
+    line-height: 1.2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    @media (max-width: 480px) {
+      font-size: 11px;
+    }
+
+    @media (max-width: 360px) {
+      font-size: 10px;
+    }
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: auto;
+  }
+
+  &__price {
+    font-size: 12px;
+    font-weight: 700;
+    color: #374151;
+
+    @media (max-width: 480px) {
+      font-size: 11px;
+    }
+
+    @media (max-width: 360px) {
+      font-size: 10px;
+    }
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #FF6B35;
+    border: none;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    height: 28px;
+    min-width: 28px;
+    width: 28px;
+    border-radius: 14px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1;
+    overflow: hidden;
+    animation: contractButton 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:hover {
+      background-color: #E55A2B;
+    }
+
+    &:active {
+      transform: scale(0.95);
+    }
+
+    span {
+      animation: fadeIn 0.3s ease-in-out 0.1s both;
+    }
+
+    @media (max-width: 480px) {
+      height: 24px;
+      min-width: 24px;
+      width: 24px;
+      border-radius: 12px;
+      font-size: 14px;
+    }
+
+    @media (max-width: 360px) {
+      height: 22px;
+      min-width: 22px;
+      width: 22px;
+      border-radius: 11px;
+      font-size: 12px;
+    }
+  }
+
+  &__quantityControl {
+    display: flex;
+    align-items: center;
+    background-color: #FF6B35;
+    border-radius: 12px;
+    padding: 2px;
+    min-width: 80px;
+    animation: expandControl 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    @media (max-width: 480px) {
+      min-width: 70px;
+      padding: 1px;
+    }
+
+    @media (max-width: 360px) {
+      min-width: 65px;
+    }
+  }
+
+  &__quantityButton {
+    width: 24px;
+    height: 24px;
+    border: none;
+    background-color: transparent;
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+
+    &:hover:not(:disabled) {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    &:active:not(:disabled) {
+      transform: scale(0.95);
+    }
+
+    &:disabled {
+      color: rgba(255, 255, 255, 0.5);
+      cursor: not-allowed;
+    }
+
+    @media (max-width: 480px) {
+      width: 20px;
+      height: 20px;
+      font-size: 12px;
+      border-radius: 5px;
+    }
+
+    @media (max-width: 360px) {
+      width: 18px;
+      height: 18px;
+      font-size: 11px;
+      border-radius: 4px;
+    }
+  }
+
+  &__quantity {
+    flex: 1;
+    text-align: center;
+    color: white;
+    font-weight: 600;
+    font-size: 12px;
+
+    @media (max-width: 480px) {
+      font-size: 11px;
+    }
+
+    @media (max-width: 360px) {
+      font-size: 10px;
+    }
+  }
+
+  // Стили для информации о цене
+  &__priceInfo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  &__weight {
+    font-size: 10px;
+    color: #9ca3af;
+    font-weight: 500;
+  }
+
+  &__description {
+    font-size: 11px;
+    color: #6b7280;
+    margin: 2px 0 6px 0;
+    line-height: 1.3;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  // Индикатор для элементов сета
+  &__setIndicator {
+    background-color: #10b981;
+    color: white;
+    font-size: 10px;
+    font-weight: 600;
+    padding: 4px 8px;
+    border-radius: 12px;
+    text-align: center;
+
+    span {
+      white-space: nowrap;
+    }
+  }
+}
+
+@keyframes slideInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes contractButton {
+  0% {
+    transform: scale(1.2);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes expandControl {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+} 

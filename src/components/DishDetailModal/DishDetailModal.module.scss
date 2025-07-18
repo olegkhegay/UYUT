@@ -1,0 +1,366 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  backdrop-filter: blur(4px);
+}
+
+.modal {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 80vh;
+  background-color: #ffffff;
+  border-radius: 24px 24px 0 0;
+  z-index: 1001;
+  overflow: hidden;
+  box-shadow: 0 -8px 32px rgba(0, 0, 0, 0.15);
+}
+
+.dragHandle {
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 4px;
+  background-color: #E5E7EB;
+  border-radius: 2px;
+  z-index: 10;
+}
+
+.closeButton {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 32px;
+  height: 32px;
+  background-color: rgba(0, 0, 0, 0.1);
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #374151;
+  font-size: 16px;
+  z-index: 10;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.15);
+    transform: scale(1.1);
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+}
+
+.content {
+  height: 100%;
+  overflow-y: auto;
+  padding: 24px 16px 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  overscroll-behavior: contain;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  -webkit-overflow-scrolling: touch; // Улучшает скроллинг на iOS
+
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #E5E7EB;
+    border-radius: 2px;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: #D1D5DB;
+  }
+}
+
+.imageContainer {
+  width: 100%;
+  height: 320px;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 3px solid #9A3412;
+  margin-top: 8px;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #374151;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.description {
+  font-size: 16px;
+  color: #6B7280;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.priceInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  background-color: #F9FAFB;
+  border-radius: 12px;
+  border: 2px solid #F3F4F6;
+}
+
+.weight {
+  font-size: 14px;
+  font-weight: 500;
+  color: #9CA3AF;
+}
+
+.price {
+  font-size: 20px;
+  font-weight: 700;
+  color: #374151;
+}
+
+.recommendations {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+.recommendationsTitle {
+  font-size: 20px;
+  font-weight: 600;
+  color: #374151;
+  margin: 0;
+}
+
+.recommendationsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  max-height: 300px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-right: 8px;
+  scrollbar-width: thin;
+  scrollbar-color: #E5E7EB #F9FAFB;
+  -webkit-overflow-scrolling: touch;
+
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #F9FAFB;
+    border-radius: 3px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #E5E7EB;
+    border-radius: 3px;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: #D1D5DB;
+  }
+
+  @media (max-width: 480px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    max-height: 250px;
+  }
+
+  @media (max-width: 360px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6px;
+    max-height: 200px;
+  }
+}
+
+.addToCartSection {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #ffffff;
+  padding: 16px;
+  border-top: 1px solid #E5E7EB;
+  z-index: 10;
+}
+
+.quantitySection {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.quantityControl {
+  display: flex;
+  align-items: center;
+  background-color: #FF6B35;
+  border-radius: 12px;
+  padding: 4px;
+  min-width: 100px;
+  animation: expandControl 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.quantityButton {
+  width: 32px;
+  height: 32px;
+  border: none;
+  background-color: transparent;
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+
+  &:hover:not(:disabled) {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+
+  &:active:not(:disabled) {
+    transform: scale(0.95);
+  }
+
+  &:disabled {
+    color: rgba(255, 255, 255, 0.5);
+    cursor: not-allowed;
+  }
+}
+
+.quantityDisplay {
+  flex: 1;
+  text-align: center;
+  color: white;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.addToCartButton {
+  flex: 1;
+  background: linear-gradient(135deg, #FF6B35 0%, #E55A2B 100%);
+  color: white;
+  border: none;
+  padding: 16px 24px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
+    background: linear-gradient(135deg, #E55A2B 0%, #D44A1F 100%);
+  }
+
+  &:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(255, 107, 53, 0.3);
+  }
+}
+
+@keyframes expandControl {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+// Адаптивность для маленьких экранов
+@media (max-width: 480px) {
+  .modal {
+    height: 85vh;
+  }
+
+  .content {
+    padding: 20px 12px 100px;
+    gap: 16px;
+  }
+
+  .imageContainer {
+    height: 260px;
+  }
+
+  .title {
+    font-size: 20px;
+  }
+
+  .description {
+    font-size: 14px;
+  }
+
+  .priceInfo {
+    padding: 12px;
+  }
+
+  .price {
+    font-size: 18px;
+  }
+
+  .addToCartSection {
+    padding: 12px;
+  }
+
+  .addToCartButton {
+    padding: 14px 20px;
+    font-size: 15px;
+  }
+}
+
+// Очень маленькие экраны
+@media (max-width: 360px) {
+  .title {
+    font-size: 18px;
+  }
+
+  .imageContainer {
+    height: 220px;
+  }
+} 

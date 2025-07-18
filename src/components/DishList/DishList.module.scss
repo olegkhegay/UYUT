@@ -1,0 +1,275 @@
+.dishList {
+  width: 100%;
+  padding: 0 16px 16px 16px;
+  background-color: #EFF0EA;
+
+  &__category {
+    margin-bottom: 24px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__categoryTitle {
+    font-size: 24px;
+    font-weight: 700;
+    color: #374151;
+    margin-left: -55px;
+    padding: 8px 16px;
+    padding-left: 55px;
+    background-color: white;
+    border-radius: 20px;
+    border: 3px solid #FF6B35;
+    text-align: center;
+    display: inline-block;
+    min-width: 120px;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    width: 100%;
+  }
+
+  // Стили для результатов поиска
+  &__searchResults {
+    width: 100%;
+  }
+
+  &__searchHeader {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 20px;
+    padding: 16px;
+    background: linear-gradient(135deg, #ffffff 0%, #fff5f2 100%);
+    border-radius: 16px;
+    border: 2px solid #FF6B35;
+    box-shadow: 0 4px 12px rgba(255, 107, 53, 0.1);
+  }
+
+  &__searchTitle {
+    font-size: 20px;
+    font-weight: 700;
+    color: #374151;
+    margin: 0;
+    line-height: 1.3;
+  }
+
+  &__searchCount {
+    font-size: 14px;
+    font-weight: 500;
+    color: #FF6B35;
+    background-color: rgba(255, 107, 53, 0.1);
+    padding: 4px 12px;
+    border-radius: 20px;
+    align-self: flex-start;
+  }
+
+  // Стили для состояния "ничего не найдено"
+  &__noResults {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #ffffff;
+    border-radius: 16px;
+    border: 2px dashed #E5E7EB;
+    margin-top: 20px;
+  }
+
+  &__noResultsIcon {
+    font-size: 48px;
+    margin-bottom: 16px;
+    opacity: 0.6;
+  }
+
+  &__noResultsTitle {
+    font-size: 20px;
+    font-weight: 600;
+    color: #374151;
+    margin: 0 0 12px 0;
+  }
+
+  &__noResultsText {
+    font-size: 14px;
+    color: #6B7280;
+    margin: 0;
+    line-height: 1.5;
+    max-width: 280px;
+  }
+
+  &__empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px;
+    text-align: center;
+    min-height: 300px;
+  }
+
+  &__emptyIcon {
+    font-size: 48px;
+    margin-bottom: 16px;
+    opacity: 0.6;
+  }
+
+  &__emptyTitle {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+  }
+
+  &__emptyText {
+    font-size: 16px;
+    color: var(--text-secondary);
+    margin-bottom: 24px;
+    max-width: 300px;
+  }
+
+  &__emptyButton {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+
+    &:hover {
+      background: var(--primary-color-dark);
+    }
+  }
+}
+
+// Адаптивность для мобильных устройств
+@media (max-width: 480px) {
+  .dishList {
+    padding: 0 12px 12px 12px;
+
+    &__searchHeader {
+      padding: 12px;
+      margin-bottom: 16px;
+    }
+
+    &__searchTitle {
+      font-size: 18px;
+    }
+
+    &__searchCount {
+      font-size: 12px;
+      padding: 3px 10px;
+    }
+
+    &__noResults {
+      padding: 30px 16px;
+    }
+
+    &__noResultsIcon {
+      font-size: 40px;
+      margin-bottom: 12px;
+    }
+
+    &__noResultsTitle {
+      font-size: 18px;
+    }
+
+    &__noResultsText {
+      font-size: 13px;
+    }
+    // API Integration states
+    &__loading, &__error {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+      text-align: center;
+      min-height: 300px;
+    }
+
+    &__loading {
+      background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+      border-radius: 16px;
+      border: 2px dashed #cbd5e1;
+    }
+
+    &__loadingIcon {
+      font-size: 48px;
+      margin-bottom: 16px;
+      animation: spin 2s linear infinite;
+    }
+
+    &__loadingTitle {
+      font-size: 20px;
+      font-weight: 600;
+      color: #475569;
+      margin-bottom: 8px;
+    }
+
+    &__loadingText {
+      font-size: 14px;
+      color: #64748b;
+    }
+
+    &__error {
+      background: linear-gradient(135deg, #fef2f2 0%, #fecaca 100%);
+      border-radius: 16px;
+      border: 2px solid #f87171;
+    }
+
+    &__errorIcon {
+      font-size: 48px;
+      margin-bottom: 16px;
+    }
+
+    &__errorTitle {
+      font-size: 20px;
+      font-weight: 600;
+      color: #dc2626;
+      margin-bottom: 8px;
+    }
+
+    &__errorText {
+      font-size: 14px;
+      color: #b91c1c;
+      margin-bottom: 16px;
+    }
+
+    &__errorButton {
+      padding: 10px 20px;
+      border: 2px solid #dc2626;
+      border-radius: 12px;
+      background-color: #ffffff;
+      color: #dc2626;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+
+      &:hover {
+        background-color: #dc2626;
+        color: #ffffff;
+      }
+    }
+  }
+}
+
+
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+} 
